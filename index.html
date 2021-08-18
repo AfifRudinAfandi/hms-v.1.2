@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+	<style>
+		.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+			background: #563bff;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			color: #fff;
+			border-color: #563bff;
+		}
+	</style>
+
+    <title>HMS V1.2</title>
+  </head>
+  <body>
+    <div class="splash">
+		<div class="splash-icon"></div>
+	</div>
+    <div class="wrapper-main">
+        <nav id="sidebar" class="sidebar">
+			<a class="sidebar-brand" href="index.html">
+				<strong>HMS</strong> Dashboard
+			</a>
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<img src="assets/img/user.svg" class="img-fluid rounded-circle"/>
+					<div class="sidebar-name">Guest</div>
+				</div>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-item active">
+						<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+							<img src="assets/img/bell.svg"><span class="align-middle">Reservation</span>
+						</a>
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+							<li class="sidebar-item active"><a class="sidebar-link" href="#">Add Reservation</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Expected Arrival List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Hotel Reservation Diary</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="assets/img/telephone.svg"><span class="align-middle">Morning call sheet</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="assets/img/guest-list.svg"><span class="align-middle">Guest In House</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="assets/img/bill.svg"><span class="align-middle">Billing</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="assets/img/pillow.svg"><span class="align-middle">Hotel Setup</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="assets/img/setting.svg"> <span class="align-middle">General Settings</span>
+							<span class="sidebar-badge badge rounded-pill bg-primary">New</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+        <div class="main">
+			<nav class="navbar navbar-expand navbar-theme">
+				<a class="sidebar-toggle d-flex me-2" id="hamburger">
+					<i class="hamburger align-self-center"></i>
+				</a>
+			</nav>
+            <main class="content">
+				<div class="container-fluid">
+					<div class="header">
+                        <div class="date-wrapper">
+                            <img src="assets/img/calendar_week.svg">
+                            <span>Today</span>
+                            <div class="wp-input">
+                                <input id="flatpickr" class="header-date">
+                                <!-- <i class="fas fa-sort-down"></i> -->
+                            </div>
+                        </div>
+						<div class="btn-wrapper horizontal">
+							<a href="#" class="hms-btn outline" style="margin-right: 16px;">Save to draft</a>
+							<button type="button" data-bs-toggle="modal" data-bs-target="#ReservationModal" class="hms-btn solid">Create Rservation</button>
+							<div class="modal fade" id="ReservationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+									<div class="modal-body">
+										<div class="wrap-modal-reservation">
+											<h5>Reservation Success!</h5>
+											<p>Your Reservation now is created, dont forget to print out reservation confirmation letter.
+												are you sure want to print reservation confirmation letter?</p>
+											<div class="center-content">
+												<button class="hms-btn outline" style="margin-right: 16px;">Continue</button>
+												<button class="hms-btn solid"><img class="white btn-icon" src="assets/img/print.svg">Print confirmation letter</button>
+												<button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+										</div>
+									</div>
+									<!-- <div class="modal-footer">
+										
+										<button type="button" class="btn btn-primary">Understood</button>
+									</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hms-main-wrap">
+						<div class="form-header">
+							<div class="form-lable">
+								Reservation Form
+							</div>
+							<div class="col-md-5" style="padding-left: 24px;">
+								<div class="input-wrap mb-0">
+									<div class="lable-wrap">
+										<p>Front Officer</p>
+										<p>Petugas</p>
+									</div>
+									<div class="col-8">
+										<input class="form-control" type="text" value="Front Office Name" disabled>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-7">
+									<div class="input-wrap">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Made By</p>
+												<p>Dibuat oleh</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<input class="form-control" type="text" value="Fatchur Beny Adi Saputra" placeholder="Name">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="input-wrap">
+										<div class="lable-wrap">
+											<p class="required">Phone Number</p>
+											<p>Nama tamu</p>
+										</div>
+										<div class="col-8">
+											<input class="form-control" type="tel" placeholder="+62">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-7">
+									<div class="input-wrap mb-0">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Company</p>
+												<p>Perusahaan</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<input class="form-control" type="text"placeholder="Company" value="PT. Barokah Artha Agung">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="information-tag">
+							<div class="tag-title">Guest Information</div>
+							<span></span>
+						</div>
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-7">
+									<div class="input-wrap">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Name of guest</p>
+												<p>Nama tamu</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<input class="form-control" type="text" placeholder="Name">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-5">
+									<div class="input-wrap">
+										<div class="lable-wrap">
+											<p class="required">No. of person</p>
+											<p>Jumlah tamu</p>
+										</div>
+										<div class="col-8">
+											<div class="form-horizon">
+												<input class="form-control" type="tel" placeholder="0" style="width: 50%;">
+												<p class="right-lable" style="width: 50%;">Person/Orang</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="input-wrap">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Arrival Date</p>
+												<p>Tanggal Kedatangan</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<input id="ArrivalDate" class="form-control" placeholder="DD-MM-YYY">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="input-wrap">
+											<div class="lable-wrap">
+												<p class="">Flight Number</p>
+												<p>No. Penerbangan</p>
+											</div>
+										<div class="input-sizing">
+											<input type="tel" class="form-control" placeholder="000">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="input-wrap">
+											<div class="lable-wrap">
+												<p class="">Flight Hour</p>
+												<p>Jam Penerbangan</p>
+											</div>
+										<div class="input-sizing">
+											<input id="FlightHour" class="form-control" placeholder="HH:MM">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="input-wrap mb-0">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Departure Date</p>
+												<p>Tanggal<br> Keberangkartan</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<input id="DepartureDate" class="form-control" placeholder="DD-MM-YYY">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="information-tag">
+							<div class="tag-title">Booking Room</div>
+							<span></span>
+						</div>
+
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-8">
+									<div class="input-wrap">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Type of accomodation</p>
+												<p>jenis kamar</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+												<label class="form-check-label" for="inlineCheckbox1">Standard</label>
+											</div>
+											<div class="form-check form-check-inline">
+											<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+											<label class="form-check-label" for="inlineCheckbox2">Superior</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+												<label class="form-check-label" for="inlineCheckbox3">Deluxe</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+												<label class="form-check-label" for="inlineCheckbox4">Suite</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="right-content">
+										<button type="button" class="hms-btn outline" data-bs-toggle="modal" data-bs-target="#RoomModal">
+											<img class="purple btn-icon" src="assets/img/pillow.svg"><span>Check Available Room</span></button>
+									</div>
+									<div class="modal fade" id="RoomModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+										<div class="modal-dialog">
+										  <div class="modal-content">
+											<div class="modal-body">
+											  <div class="wrap-modal-room">
+												  <div class="modal-rev-header">
+													  <h5>Room Type</h5>
+													  <div class="date-wrapper">
+														<img src="assets/img/calendar_week.svg">
+														<span>Today</span>
+														<div class="wp-input">
+															<input id="RoomDate" class="header-date">
+															<!-- <i class="fas fa-sort-down"></i> -->
+														</div>
+													</div>
+												  </div>
+											  </div>
+											  <ul class="nav nav-pills navigation-room-type mb-3" id="pills-tab" role="tablist">
+												<li class="nav-item" role="presentation">
+												  <button class="nav-link active" id="pills-menu1-tab" data-bs-toggle="pill" data-bs-target="#menu1" type="button" role="tab" aria-controls="pills-menu1" aria-selected="true">standard <span class="badge rounded-pill">46</span></button>
+												</li>
+												<li class="nav-item" role="presentation">
+												  <button class="nav-link" id="pills-menu2-tab" data-bs-toggle="pill" data-bs-target="#menu2" type="button" role="tab" aria-controls="pills-menu2" aria-selected="false">superior <span class="badge rounded-pill">12</span></button>
+												</li>
+												<li class="nav-item" role="presentation">
+												  <button class="nav-link" id="pills-menu3-tab" data-bs-toggle="pill" data-bs-target="#menu3" type="button" role="tab" aria-controls="pills-menu3" aria-selected="false">deluxe <span class="badge rounded-pill">8</span></button>
+												</li>
+												<li class="nav-item" role="presentation">
+												  <button class="nav-link" id="pills-menu4-tab" data-bs-toggle="pill" data-bs-target="#menu4" type="button" role="tab" aria-controls="pills-menu4" aria-selected="false">deluxe <span class="badge rounded-pill">8</span></button>
+												</li>
+											  </ul>
+											  <div class="tab-content" id="pills-tabContent">
+												<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+												<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+												<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+											  </div>
+											</div>
+										  </div>
+										</div>
+									  </div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-wrap">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="">Daily Rate/category</p>
+												<p>harga kamar/kategory</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<select class="form-select">
+												<option selected>Normal Price/Special Promo</option>
+												<option value="1">----------</option>
+												<option value="2">----------</option>
+												<option value="3">----------</option>
+											  </select>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-wrap">
+										<div class="lable-wrap">
+											<p class="">Guest Request</p>
+											<p>Permintaan Tamu</p>
+										</div>
+										<div class="input-sizing">
+											<input class="form-control" type="tel" value="Kamar dekat dengan kolam renang">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="information-tag">
+							<div class="tag-title">Billing Payment</div>
+							<span></span>
+						</div>
+
+
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="input-wrap">
+										<div class="lable-sizing">
+											<div class="lable-wrap">
+												<p class="required">Payment Type</p>
+												<p>jenis Pembayaran</p>
+											</div>
+										</div>
+										<div class="input-sizing">
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="Payment1" value="option1">
+												<label class="form-check-label" for="Payment1">Personal/Pribadi</label>
+											</div>
+											<div class="form-check form-check-inline">
+											<input class="form-check-input" type="checkbox" id="Payment2" value="option2">
+											<label class="form-check-label" for="Payment2">Company/Perusahaan</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="Payment3" value="option3">
+												<label class="form-check-label" for="Payment3">Travel Agent/biro perjalanan</label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="checkbox" id="Payment4" value="option4">
+												<label class="form-check-label" for="Payment4">airlines/penerbangan</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+       var example = flatpickr('#flatpickr',{
+            altInput: true,
+            altFormat: "F j",
+            dateFormat: "m-d",
+            defaultDate: "today"
+        });
+		var example = flatpickr('#ArrivalDate',{
+            altInput: true,
+            altFormat: "j F Y",
+            dateFormat: "d-m-y",
+        });
+		var example = flatpickr('#FlightHour',{
+			enableTime: true,
+			noCalendar: true,
+			dateFormat: "H:i",
+		});
+		var example = flatpickr('#DepartureDate',{
+            altInput: true,
+            altFormat: "j F Y",
+            dateFormat: "d-m-y",
+        });
+		 var example = flatpickr('#RoomDate',{
+            altInput: true,
+            altFormat: "F j",
+            dateFormat: "m-d",
+            defaultDate: "today"
+        });
+    </script>
+  </body>
+</html>
