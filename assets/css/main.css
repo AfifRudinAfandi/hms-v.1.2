@@ -624,6 +624,7 @@ nav .pagination .page-item .page-link{
     text-transform: capitalize;
     color: #FFFFFF;
     border: none;
+    white-space: nowrap;
 }
 .hms-table tr th, .hms-table tr td{
     padding: 10px 20px;
