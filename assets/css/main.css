@@ -394,6 +394,18 @@ main.content .header .date-wrapper .header-date:focus{
 
 
 /* GLOBAL STYLE */
+.color-blue{
+    color: #00C4FA !important;
+}
+.color-purple{
+    color: #563BFF !important;
+}
+.color-orange{
+    color: #ED8030 !important;
+}
+.color-green{
+    color: #63C042 !important;
+}
 .white{
     filter: invert(96%) sepia(5%) saturate(2%) hue-rotate(310deg) brightness(117%) contrast(100%);
 }
@@ -416,11 +428,38 @@ main.content .header .date-wrapper .header-date:focus{
     text-decoration: none;
     padding: 10px 24px;
 }
+.hms-btn-sm{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    padding: 6px 12px;
+}
+
+.hms-btn-sm.success{
+    border: 1px solid #63C042;
+    background-color: #63C042;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+.hms-btn-sm.cancel{
+    border: 1px solid #C6C7D3;
+    background-color: #C6C7D3;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+.hms-btn-sm.cancel.outline{
+    border: 1px solid #C6C7D3;
+    border-radius: 4px;
+    color: #563BFF;
+    background-color: transparent;
+}
 .hms-btn.outline{
     border: 1px solid #563BFF;
     border-radius: 6px;
     color: #563BFF;
-    background-color: #FFFFFF;
+    background-color: transparent;
 }
 .hms-btn.solid{
     border: 1px solid #563BFF;
@@ -469,7 +508,6 @@ main.content .header .date-wrapper .header-date:focus{
     width: 18px;
     height: 18px;
     object-fit: contain;
-    margin-right: 12px;
 }
 .right-content{
     display: flex;
@@ -540,6 +578,79 @@ nav .pagination .page-item .page-link{
     border-radius: 80px;
     text-transform: capitalize;
 }
+.btn-wrapper.horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.filter-collapse .accordion-button{
+    background-color: #FFFFFF;
+    box-shadow: none;
+    padding: 18px 18px 18px 24px;
+}
+.filter-collapse .accordion-button:not(.collapsed)::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.hms-table-wrap-iner .hms-table{
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.hms-table{
+    background-color: transparent;
+}
+.hms-table thead{
+    background-color: transparent;
+    position: relative;
+}
+.hms-table thead::before{
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #2B3352;
+    left: 0;
+    top: 0;
+}
+.hms-table thead tr{
+    position: relative;
+}
+.hms-table thead tr th{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    border: none;
+}
+.hms-table tr th, .hms-table tr td{
+    padding: 10px 20px;
+}
+.hms-table tbody tr td{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #2B3352;
+    vertical-align: middle;
+}
+.hms-table tbody tr td span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #C6C7D3;
+}
+.hms-table tbody tr:nth-last-of-type(1) td{
+    border: none;
+}
+
+
+
 
 
 
@@ -547,7 +658,39 @@ nav .pagination .page-item .page-link{
 
 
 
-
+.hms-table-wrap .table-header h5{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2B3352;
+    margin-bottom: 0;
+}
+.hms-table-wrap .table-header .horizontal span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2B3352;
+    white-space: nowrap;
+}
+.hms-table-wrap .table-header .horizontal select{
+    width: max-content;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2B3352;
+    padding: 6px 33px 6px 10px;
+}
+.content-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #2B3352;
+    margin-bottom: 0;
+}
 .wrap-check-room{
     padding: 18px 24px;
     min-height: 327px;

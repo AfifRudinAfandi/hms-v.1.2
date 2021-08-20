@@ -1,4 +1,17 @@
 var hamburger = document.getElementById("hamburger");
+
+hamburger.addEventListener("click",function(e){
+    document.getElementById("sidebar").classList.toggle('toggled');
+},false);
+
+
+
+
+
+
+
+
+
 var roomcheck = document.getElementById("room1");
 var roomcheck2 = document.getElementById("room2");
 var roomcheck3 = document.getElementById("room3");
@@ -9,10 +22,6 @@ var roomcheck7 = document.getElementById("room7");
 var roomcheck8 = document.getElementById("room8");
 var roomcheck9 = document.getElementById("room9");
 var roomcheck10 = document.getElementById("room10");
-
-hamburger.addEventListener("click",function(e){
-    document.getElementById("sidebar").classList.toggle('toggled');
-},false);
 
 
 window.addEventListener('load', (event) => {

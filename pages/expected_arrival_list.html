@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+	<style>
+		.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+			background: #563bff;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			color: #fff;
+			border-color: #563bff;
+		}
+	</style>
+
+    <title>HMS V1.2</title>
+  </head>
+  <body>
+    <div class="splash">
+		<div class="splash-icon"></div>
+	</div>
+    <div class="wrapper-main">
+        <nav id="sidebar" class="sidebar">
+			<a class="sidebar-brand" href="../index.html">
+				<strong>HMS</strong> Dashboard
+			</a>
+			<div class="sidebar-content">
+				<div class="sidebar-user">
+					<img src="../assets/img/user.svg" class="img-fluid rounded-circle"/>
+					<div class="sidebar-name">Guest</div>
+				</div>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-item active">
+						<a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link">
+							<img src="../assets/img/bell.svg"><span class="align-middle">Reservation</span>
+						</a>
+						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="../index.html">Add Reservation</a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="#">Expected Arrival List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="reservation_diary.html">Hotel Reservation Diary</a></li>
+						</ul>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="../assets/img/telephone.svg"><span class="align-middle">Morning call sheet</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="../assets/img/guest-list.svg"><span class="align-middle">Guest In House</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="../assets/img/bill.svg"><span class="align-middle">Billing</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="../assets/img/pillow.svg"><span class="align-middle">Hotel Setup</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="#">
+							<img src="../assets/img/setting.svg"> <span class="align-middle">General Settings</span>
+							<span class="sidebar-badge badge rounded-pill bg-primary">New</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+        <div class="main">
+			<nav class="navbar navbar-expand navbar-theme">
+				<a class="sidebar-toggle d-flex me-2" id="hamburger">
+					<i class="hamburger align-self-center"></i>
+				</a>
+			</nav>
+            <main class="content">
+				<div class="container-fluid">
+					<div class="header mb-4">
+                        <div class="date-wrapper">
+                            <img src="../assets/img/calendar_week.svg">
+                            <span>Today</span>
+                            <div class="wp-input">
+                                <input id="flatpickr" class="header-date">
+                                <!-- <i class="fas fa-sort-down"></i> -->
+                            </div>
+                        </div>
+					</div>
+					<div class="header mb-4">
+						<h1 class="content-title">Expected Arrival List</h1>
+						<div class="btn-wrapper horizontal">
+							<a href="#" class="hms-btn outline" style="margin-right: 16px;">Print <img class="purple btn-icon" style="margin-left: 12px;" src="../assets/img/print.svg"></a>
+							<button type="button" data-bs-toggle="modal" data-bs-target="#ReservationModal" class="hms-btn solid">Export Data to Excel</button>
+							<div class="modal fade" id="ReservationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+									<div class="modal-body">
+										<div class="wrap-modal-reservation">
+											<h5>Reservation Success!</h5>
+											<p>Your Reservation now is created, dont forget to print out reservation confirmation letter.
+												are you sure want to print reservation confirmation letter?</p>
+											<div class="center-content">
+												<button class="hms-btn outline" style="margin-right: 16px;">Continue</button>
+												<button class="hms-btn solid"><img class="white btn-icon" style="margin-right: 12px;" src="../assets/img/print.svg">Print confirmation letter</button>
+												<button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+										</div>
+									</div>
+									<!-- <div class="modal-footer">
+										
+										<button type="button" class="btn btn-primary">Understood</button>
+									</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hms-main-wrap mb-5">
+						<div class="accordion accordion-flush filter-collapse" id="accordionFlushExample">
+							<div class="accordion-item">
+							  <h2 class="accordion-header" id="flush-headingOne">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+									<div class="information-tag ps-0">
+										<div class="tag-title">Data Filter</div>
+										<span class="me-3"></span>
+									</div>
+								</button>
+							  </h2>
+							  <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+								<div class="accordion-body p-0">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-md-4">
+												<div class="input-wrap">
+													<div class="lable-sizing">
+														<div class="lable-wrap">
+															<p class="">Arrival Date</p>
+															<p>Tanggal Kedatangan</p>
+														</div>
+													</div>
+													<div class="input-sizing">
+														<input id="ArrivalDate" class="form-control" placeholder="DD-MM-YYY">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="input-wrap">
+														<div class="lable-wrap">
+															<p class="">Departure Date</p>
+															<p>Tanggal berangkat</p>
+														</div>
+													<div class="input-sizing">
+														<input id="DepartureDate" class="form-control" placeholder="DD-MM-YYY">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="input-wrap">
+														<div class="lable-wrap">
+															<p class="">Payment Type</p>
+															<p>Jenis Pembayaran</p>
+														</div>
+													<div class="input-sizing">
+														<input class="form-control" type="text" placeholder="Payment Type">
+													</div>
+												</div>
+											</div>
+											<div class="col-md-8">
+												<div class="input-wrap">
+													<div class="lable-sizing">
+														<div class="lable-wrap">
+															<p class="">Type of accomodation</p>
+															<p>jenis kamar</p>
+														</div>
+													</div>
+													<div class="input-sizing">
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+															<label class="form-check-label" for="inlineCheckbox1">Standard</label>
+														</div>
+														<div class="form-check form-check-inline">
+														<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+														<label class="form-check-label" for="inlineCheckbox2">Superior</label>
+														</div>
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+															<label class="form-check-label" for="inlineCheckbox3">Deluxe</label>
+														</div>
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+															<label class="form-check-label" for="inlineCheckbox4">Suite</label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="right-content">
+													<div class="btn-wrapper horizontal">
+														<button class="hms-btn outline" type="button" data-bs-dismiss="modal" style="margin-right: 12px;">Clear</button>
+														<button class="hms-btn solid" type="button" data-bs-dismiss="modal">Apply Filter</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+							  	</div>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="hms-table-wrap">
+						<div class="table-header header mb-3 align-items-center">
+							<h5>Showing <span>10</span> of <span>473</span> Results</h5>
+							<div class="btn-wrapper horizontal">
+								<span style="margin-right: 17px">Results per pages</span>
+								<select class="form-select" aria-label="Default select example">
+									<option selected>10</option>
+									<option value="1">25</option>
+									<option value="2">50</option>
+									<option value="3">100</option>
+								  </select>
+							</div>
+						</div>
+						<div class="hms-table-wrap-iner">
+							<table class="table hms-table">
+								
+								<thead>
+									<tr>
+										<th style="width: 4%">No.</th>
+										<th style="width: 25%">Guest Name</th>
+										<th>Room Type</th>
+										<th>Arrival Date</th>
+										<th>Departure Date</th>
+										<th>No. Of Person</th>
+										<th>Payment</th>
+										<th style="width: 12%">Actions</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>01</td>
+										<td>Fatchur Beny adi saputra</td>
+										<td class="color-blue">standard</td>
+										<td>15 Aug 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>5 <span>Person</span></td>
+										<td>Travel Agent</td>
+										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>02</td>
+										<td>Agus Wibowo</td>
+										<td class="color-purple">Superior</td>
+										<td>10 Aug 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>3 <span>Person</span></td>
+										<td>Personal</td>
+										<td style="text-align: end;"><button class="hms-btn-sm cancel" style="margin-right: 10px;">Cancle</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>03</td>
+										<td>Much Chafid</td>
+										<td class="color-orange">Deluxe</td>
+										<td>5 Aug 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>7 <span>Person</span></td>
+										<td>Personal</td>
+										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>04</td>
+										<td>Shohibul Amin</td>
+										<td class="color-green">Suite</td>
+										<td>20 July 2021<br><span>12:00 AM</span></td>
+										<td>3 Aug 2021<br><span>02:00 PM</span></td>
+										<td>2 <span>Person</span></td>
+										<td>Airlines</td>
+										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>05</td>
+										<td>Muhammad Affif Rudi Affandi</td>
+										<td class="color-blue">Standard</td>
+										<td>15 July 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>5 <span>Person</span></td>
+										<td>Company</td>
+										<td style="text-align: end;"><button class="hms-btn-sm cancel" style="margin-right: 10px;">Cancel</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									<tr>
+										<td>06</td>
+										<td>Fatchur Beny adi saputra</td>
+										<td class="color-blue">standard</td>
+										<td>15 Aug 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>5 <span>Person</span></td>
+										<td>Travel Agent</td>
+										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>07</td>
+										<td>Agus Wibowo</td>
+										<td class="color-purple">Superior</td>
+										<td>10 Aug 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>3 <span>Person</span></td>
+										<td>Personal</td>
+										<td style="text-align: end;"><button class="hms-btn-sm cancel" style="margin-right: 10px;">Cancle</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>08</td>
+										<td>Much Chafid</td>
+										<td class="color-orange">Deluxe</td>
+										<td>5 Aug 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>7 <span>Person</span></td>
+										<td>Personal</td>
+										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>09</td>
+										<td>Shohibul Amin</td>
+										<td class="color-green">Suite</td>
+										<td>20 July 2021<br><span>12:00 AM</span></td>
+										<td>3 Aug 2021<br><span>02:00 PM</span></td>
+										<td>2 <span>Person</span></td>
+										<td>Airlines</td>
+										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+									
+									<tr>
+										<td>10</td>
+										<td>Muhammad Affif Rudi Affandi</td>
+										<td class="color-blue">Standard</td>
+										<td>15 July 2021<br><span>12:00 AM</span></td>
+										<td>25 Aug 2021<br><span>02:00 PM</span></td>
+										<td>5 <span>Person</span></td>
+										<td>Company</td>
+										<td style="text-align: end;"><button class="hms-btn-sm cancel" style="margin-right: 10px;">Cancel</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+					</div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- <script src="../assets/js/app.js"></script> -->
+
+    <script>
+       var example = flatpickr('#flatpickr',{
+            altInput: true,
+            altFormat: "F j",
+            dateFormat: "m-d",
+            defaultDate: "today"
+        });
+		var example = flatpickr('#ArrivalDate',{
+            altInput: true,
+            altFormat: "j F Y",
+            dateFormat: "d-m-y",
+        });
+		var example = flatpickr('#FlightHour',{
+			enableTime: true,
+			noCalendar: true,
+			dateFormat: "H:i",
+		});
+		var example = flatpickr('#DepartureDate',{
+            altInput: true,
+            altFormat: "j F Y",
+            dateFormat: "d-m-y",
+        });
+		 var example = flatpickr('#RoomDate',{
+            altInput: true,
+            altFormat: "F j",
+            dateFormat: "m-d",
+            defaultDate: "today"
+        });
+    </script>
+  </body>
+</html>
