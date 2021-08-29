@@ -451,6 +451,7 @@ main.content .header .date-wrapper .header-date:focus{
     line-height: 21px;
     text-transform: capitalize;
     padding: 6px 12px;
+    text-decoration: none;
 }
 
 .hms-btn-sm.success{
@@ -458,30 +459,50 @@ main.content .header .date-wrapper .header-date:focus{
     background-color: #63C042;
     border-radius: 4px;
     color: #FFFFFF;
+    text-decoration: none;
 }
 .hms-btn-sm.cancel{
     border: 1px solid #C6C7D3;
     background-color: #C6C7D3;
     border-radius: 4px;
     color: #FFFFFF;
+    text-decoration: none;
 }
 .hms-btn-sm.cancel.outline{
     border: 1px solid #C6C7D3;
     border-radius: 4px;
     color: #563BFF;
     background-color: transparent;
+    text-decoration: none;
 }
 .hms-btn.outline{
     border: 1px solid #563BFF;
     border-radius: 6px;
     color: #563BFF;
     background-color: transparent;
+    text-decoration: none;
 }
 .hms-btn.solid{
     border: 1px solid #563BFF;
     background-color: #563BFF;
     border-radius: 6px;
     color: #FFFFFF;
+    text-decoration: none;
+}
+
+.hms-btn-sm.outline{
+    border: 1px solid #563BFF;
+    border-radius: 6px;
+    color: #563BFF;
+    background-color: transparent;
+    text-decoration: none;
+}
+.hms-btn-sm.solid{
+    border: 1px solid #563BFF;
+    background-color: #563BFF;
+    border-radius: 6px;
+    color: #FFFFFF;
+    text-decoration: none;
 }
 .form-control, .form-select{
     font-style: normal;
@@ -619,7 +640,7 @@ main.content .header .date-wrapper .header-date:focus{
     background-color: transparent;
     position: relative;
 }
-.hms-table thead::before{
+/* .hms-table thead::before{
     content: '';
     position: absolute;
     height: 40px;
@@ -628,7 +649,7 @@ main.content .header .date-wrapper .header-date:focus{
     background-color: #2B3352;
     left: 0;
     top: 0;
-}
+} */
 .hms-table thead tr{
     position: relative;
 }
@@ -641,6 +662,15 @@ main.content .header .date-wrapper .header-date:focus{
     color: #FFFFFF;
     border: none;
     white-space: nowrap;
+    background-color: #2B3352;
+}
+.hms-table thead tr th:nth-child(1){
+    border-bottom-left-radius: 4px !important;
+    border-top-left-radius: 4px !important;
+}
+.hms-table thead tr th:nth-last-of-type(1){
+    border-bottom-right-radius: 4px !important;
+    border-top-right-radius: 4px !important;
 }
 .hms-table tr th, .hms-table tr td{
     padding: 10px 20px;
@@ -650,7 +680,6 @@ main.content .header .date-wrapper .header-date:focus{
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
-    text-transform: capitalize;
     color: #2B3352;
     vertical-align: middle;
 }
@@ -811,15 +840,77 @@ main.content .header .date-wrapper .header-date:focus{
     border-radius: 4px;
     width: 100% !important;
 }
+
+.general-form label span{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration: underline;
+    text-transform: capitalize;
+    color: #2B3352;
+}
+.general-form label{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #C6C7D3;
+    padding-right: 0;
+}
+.general-form .form-control::placeholder{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #C6C7D3;
+}
+.general-form .form-control{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #76777a;
+}
+.general-form .select-specialist {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+    padding: 9px 11px !important;
+    border: 1px solid #C6C7D3;
+    border-radius: 4px;
+    width: 100% !important;
+}
 .row-align-vertical{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-
-
-
+.teacher-profile-preview tr td{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #2B3352;
+}
+.teacher-profile-preview tr td:nth-child(1){
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #C6C7D3;
+}
+.profile-picture{
+    border-radius: 4px;
+}
 
 /* ============================ */
 
@@ -1291,11 +1382,11 @@ main.content .header .date-wrapper .header-date:focus{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin: 76px;
+    margin: 76px 0px;
 }
 .user-dashboard-wrapper .user-navigation{
     width: 25%;
-    min-width: 300px;
+    min-width: 254px;
     max-width: 400px;
 }
 .bg-white{
@@ -1370,6 +1461,7 @@ main.content .header .date-wrapper .header-date:focus{
     color: #C6C7D3;
     padding: 10px;
     border-bottom: 1px solid #c6c7d335;
+    transition: none;
 }
 .main-navigation .navigation-item .nav-link img{
     filter: invert(87%) sepia(5%) saturate(368%) hue-rotate(198deg) brightness(92%) contrast(91%);
@@ -1411,7 +1503,7 @@ main.content .header .date-wrapper .header-date:focus{
     background-color:#FFFFFF;
     border: 1px solid #EAEAEE;
     border-radius: 4px;
-    margin-left: 48px;
+    margin-left: 38px;
 }
 .user-dashboard .header{
     padding: 30px 35px;

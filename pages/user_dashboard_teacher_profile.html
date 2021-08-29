@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+
+    <title>HMS V1.2</title>
+  </head>
+  <body>
+      <div class="user-dasboard-main">
+          <div class="user-dashboard-wrapper">
+              <div class="user-navigation">
+                  <div class="header-navigation bg-white radius-4 mb-3">
+                      <div class="user-flex">
+                          <img class="purple" src="../assets/img/user.svg">
+                          <div class="user-role">
+                              <h5>Administrator</h5>
+                              <span>admin@mail.com</span>
+                          </div>
+                      </div>
+                      <p class="last-logged-on">Last logged on today 08:00 am</p>
+                  </div>
+                  <nav class="navbar main-navigation bg-white radius-4">
+                      <div class="nav-item navigation-item">
+                          <a href="user_dashboard.html" class="nav-link">
+                            <img src="../assets/img/layout.svg">
+                            <span>Dashboard</span>
+                          </a>
+                      </div>
+                      <div class="nav-item navigation-item">
+                          <a href="#" class="nav-link active">
+                            <img src="../assets/img/presentation.svg">
+                            <span>Teacher</span>
+                          </a>
+                      </div>
+                      <div class="nav-item navigation-item">
+                          <a href="#" class="nav-link">
+                            <img src="../assets/img/student.svg">
+                            <span>Student</span>
+                          </a>
+                      </div>
+                      <div class="nav-item navigation-item">
+                          <a href="#" class="nav-link">
+                            <img src="../assets/img/book.svg">
+                            <span>Report</span>
+                          </a>
+                      </div>
+                      <div class="nav-item navigation-item">
+                          <a href="#" class="nav-link">
+                            <img src="../assets/img/setting.svg">
+                            <span>General Settings</span>
+                          </a>
+                      </div>
+                      <div class="nav-item navigation-item">
+                            <a class="nav-link hms-solid-logout" href="#">
+                                    Logout Account <img class="red" src="../assets/img/power.svg" alt="">
+                            </a>
+                      </div>
+                  </nav>
+              </div>
+              <div class="user-dashboard-column w-100" style="margin-left: 38px;">
+                <div class="user-dashboard ms-0 mb-5">
+                    <div class="header br-b mb-4" style="padding: 20px 24px 18px 24px;">
+                        <div class="row-spacebetwen">
+                          <h5 class="user-title">Teacher Profile</h5>
+                          <div class="btn-wrapper horizontal">
+                              <button type="button" class="hms-btn-sm solid"><img class="white" style="margin-right: 12px;" src="../assets/img/pencil.svg"> edit profile</button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="profile-picture" src="../assets/img/default-profile.jpg" style="width: 100%;">
+                            </div>
+                            <div class="col-md-10">
+                                <table class="table table-borderless teacher-profile-preview">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 162px;">Full Name</td>
+                                            <td style="width: 10px;">:</td>
+                                            <td>Fatchur Beny Adi Saputra</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email Address</td>
+                                            <td>:</td>
+                                            <td>fatchurbeny@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Teach Specialist</td>
+                                            <td>:</td>
+                                            <td>Front Office</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-dashboard ms-0">
+                    <div class="header br-b mb-4" style="padding: 18px 24px 12px 24px;">
+                        <div class="row-spacebetwen">
+                          <h5 class="user-title">Class List</h5>
+                          <div class="btn-wrapper horizontal">
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#ReservationModal" class="hms-btn-sm solid"><img class="white" style="margin-right: 12px;" src="../assets/img/book.svg"> add Class</button>
+                              <div class="modal fade modal-add" id="ReservationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <p class="modal-title">Add Class</p>
+                                          </div>
+                                          <div class="modal-body">
+                                              <form action="#">
+                                                  <div class="form-add">
+                                                      <div class="mb-2 row row-align-vertical">
+                                                          <label class="col-3 col-form-label"><span>Class Name</span><br>Nama Kelas</label>
+                                                          <div class="col-9">
+                                                              <input type="text" class="form-control" placeholder="enter class name">
+                                                          </div>
+                                                      </div>
+                                                      <div class="mb-2 row row-align-vertical">
+                                                          <label class="col-3 col-form-label"><span>Class Date</span><br>Hari Kelas</label>
+                                                          <div class="col-9">
+                                                              <input type="date" class="form-control" placeholder="Enter class date">
+                                                          </div>
+                                                      </div>
+                                                      <div class="mb-2 row row-align-vertical">
+                                                          <label class="col-3 col-form-label"><span>Start Time</span><br>Waktu Mulai</label>
+                                                          <div class="col-9">
+                                                              <input type="time" class="form-control" placeholder="HH:MM:SS">
+                                                          </div>
+                                                      </div>
+                                                      <div class="mb-2 row row-align-vertical">
+                                                          <label class="col-3 col-form-label"><span>End Time</span><br>Waktu Berakhir</label>
+                                                          <div class="col-9">
+                                                              <input type="time" class="form-control" placeholder="HH:MM:SS">
+                                                          </div>
+                                                      </div>
+                                                      <div class="mb-2 row row-align-vertical">
+                                                          <label class="col-3 col-form-label"><span>Max Student</span><br>Batas Maksimal Siswa</label>
+                                                          <div class="col-9">
+                                                              <input type="number" class="form-control" placeholder="32">
+                                                          </div>
+                                                      </div>
+                                                      <div class="btn-wrapper horizontal mt-4" style="justify-content: flex-end;">
+                                                          <button class="hms-btn outline" data-bs-dismiss="modal" style="margin-right: 16px;">Cancel</button>
+                                                          <button type="submit" class="hms-btn solid">Save Class</button>
+                                                      </div>
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      <!-- <div class="modal-footer">
+                                          
+                                          <button type="button" class="btn btn-primary">Understood</button>
+                                      </div> -->
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="row-spacebetwen mb-4">
+                                  <div class="btn-wrapper horizontal">
+                                      <span class="lable-table"  style="margin-right: 17px">Show</span>
+                                      <select class="form-select" aria-label="Default select example">
+                                          <option selected="">10</option>
+                                          <option value="1">25</option>
+                                          <option value="2">50</option>
+                                          <option value="3">100</option>
+                                        </select>
+                                  </div>
+                                  <div class="btn-wrapper horizontal">
+                                      <span class="lable-table" style="margin-right: 17px">Search</span>
+                                      <input class="form-control" type="text" placeholder="search">
+                                  </div>
+                              </div>
+                              <div class="table-responsive">
+                                  <table class="table table-striped hms-table mb-4">
+                                      <thead>
+                                          <tr>
+                                              <th style="width: 4%">No.</th>
+                                              <th style="width: 25%">Full Name</th>
+                                              <th>Email Address</th>
+                                              <th>Teach Specialist</th>
+                                              <th>Last Loged</th>
+                                              <th>Action</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>01</td>
+                                              <td>Fatchur Beny adi saputra</td>
+                                              <td>fatchurbeny@gmail.com</td>
+                                              <td>Front Office</td>
+                                              <td>today 08:00 aM</td>
+                                              <td style="text-align: end;">
+                                                  <div class="btn-group right">
+                                                      <button class="hms-btn-sm success" style="margin-right: 10px;">View Profile</button>
+                                                      <div class="dropdown dropdown-edit">
+                                                          <button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                              <i class="fas fa-ellipsis-h"></i>
+                                                          </button>
+                                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                              <li>
+                                                                  <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+                                                              </li>
+                                                              <li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                          
+                                          <tr>
+                                              <td>02</td>
+                                              <td>Agus Wibowo</td>
+                                              <td>fatchurbeny@gmail.com</td>
+                                              <td>Front Office</td>
+                                              <td>today 08:00 aM</td>
+                                              <td style="text-align: end;">
+                                                  <div class="btn-group right">
+                                                      <button class="hms-btn-sm success" style="margin-right: 10px;">View Profile</button>
+                                                      <div class="dropdown dropdown-edit">
+                                                          <button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                              <i class="fas fa-ellipsis-h"></i>
+                                                          </button>
+                                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                              <li>
+                                                                  <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+                                                              </li>
+                                                              <li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                          
+                                          <tr>
+                                              <td>03</td>
+                                              <td>Much Chafid</td>
+                                              <td>fatchurbeny@gmail.com</td>
+                                              <td>Front Office</td>
+                                              <td>today 08:00 aM</td>
+                                              <td style="text-align: end;">
+                                                  <div class="btn-group right">
+                                                      <button class="hms-btn-sm success" style="margin-right: 10px;">View Profile</button>
+                                                      <div class="dropdown dropdown-edit">
+                                                          <button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                              <i class="fas fa-ellipsis-h"></i>
+                                                          </button>
+                                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                              <li>
+                                                                  <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+                                                              </li>
+                                                              <li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                          
+                                          <tr>
+                                              <td>04</td>
+                                              <td>Shohibul Amin</td>
+                                              <td>fatchurbeny@gmail.com</td>
+                                              <td>Front Office</td>
+                                              <td>today 08:00 aM</td>
+                                              <td style="text-align: end;">
+                                                  <div class="btn-group right">
+                                                      <button class="hms-btn-sm success" style="margin-right: 10px;">View Profile</button>
+                                                      <div class="dropdown dropdown-edit">
+                                                          <button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                              <i class="fas fa-ellipsis-h"></i>
+                                                          </button>
+                                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                              <li>
+                                                                  <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+                                                              </li>
+                                                              <li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                          
+                                          <tr>
+                                              <td>05</td>
+                                              <td>Muhammad Affif Rudi Afandi</td>
+                                              <td>fatchurbeny@gmail.com</td>
+                                              <td>Front Office</td>
+                                              <td>today 08:00 aM</td>
+                                              <td style="text-align: end;">
+                                                  <div class="btn-group right">
+                                                      <button class="hms-btn-sm success" style="margin-right: 10px;">View Profile</button>
+                                                      <div class="dropdown dropdown-edit">
+                                                          <button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                              <i class="fas fa-ellipsis-h"></i>
+                                                          </button>
+                                                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                              <li>
+                                                                  <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+                                                              </li>
+                                                              <li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+                                                          </ul>
+                                                      </div>
+                                                  </div>
+                                              </td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <div class="row-spacebetwen">
+                                  <div class="btn-wrapper horizontal">
+                                      <span class="lable-table" style="margin-right: 17px">Showing 5 To 25 Results</span>
+                                  </div>
+                                  <nav aria-label="Page navigationtable example" class="navigation-table">
+                                      <ul class="pagination">
+                                        <li class="page-item">
+                                          <a class="page-link" href="#" aria-label="Previous">
+                                              <i class="fas fa-chevron-left"></i>
+                                          </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#" aria-label="Next">
+                                              <i class="fas fa-chevron-right"></i>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                  </nav>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              
+              
+          </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function() {
+            readURL(this);
+        });
+    </script>
+
+</body>
+</html>

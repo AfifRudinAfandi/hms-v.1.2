@@ -69,9 +69,16 @@
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="#">
+						<a data-bs-target="#dashboards2" data-bs-toggle="collapse" class="sidebar-link">
 							<img src="../assets/img/pillow.svg"><span class="align-middle">Hotel Setup</span>
 						</a>
+						<ul id="dashboards2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Room Type</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Room Status</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Price List</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Paid Services</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="#">Discount</a></li>
+						</ul>
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="#">
@@ -105,28 +112,6 @@
 						<div class="btn-wrapper horizontal">
 							<a href="#" class="hms-btn outline" style="margin-right: 16px;">Print <img class="purple btn-icon" style="margin-left: 12px;" src="../assets/img/print.svg"></a>
 							<button type="button" data-bs-toggle="modal" data-bs-target="#ReservationModal" class="hms-btn solid">Export Data to Excel</button>
-							<div class="modal fade" id="ReservationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-									<div class="modal-body">
-										<div class="wrap-modal-reservation">
-											<h5>Reservation Success!</h5>
-											<p>Your Reservation now is created, dont forget to print out reservation confirmation letter.
-												are you sure want to print reservation confirmation letter?</p>
-											<div class="center-content">
-												<button class="hms-btn outline" style="margin-right: 16px;">Continue</button>
-												<button class="hms-btn solid"><img class="white btn-icon" style="margin-right: 12px;" src="../assets/img/print.svg">Print confirmation letter</button>
-												<button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
-											</div>
-										</div>
-									</div>
-									<!-- <div class="modal-footer">
-										
-										<button type="button" class="btn btn-primary">Understood</button>
-									</div> -->
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div class="hms-main-wrap mb-5">
@@ -260,7 +245,25 @@
 										<td>Rp.250.000 <span>/Night</span></td>
 										<td>5 <span>Night</span></td>
 										<td>A101</td>
-										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+										<td style="text-align: end;">
+											<div class="btn-group right">
+												<button class="hms-btn-sm success" style="margin-right: 10px;">Check in</button>
+												<div class="dropdown dropdown-edit">
+													<button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class="fas fa-ellipsis-h"></i>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-eye"></i><span>View Details</span></a>
+														</li>
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+														</li>
+														<li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>02</td>
@@ -271,7 +274,26 @@
 										<td>Rp.250.000 <span>/Night</span></td>
 										<td>5 <span>Night</span></td>
 										<td>A102</td>
-										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+										
+										<td style="text-align: end;">
+											<div class="btn-group right">
+												<button class="hms-btn-sm cancel" style="margin-right: 10px;">Cancle</button>
+												<div class="dropdown dropdown-edit">
+													<button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class="fas fa-ellipsis-h"></i>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-eye"></i><span>View Details</span></a>
+														</li>
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+														</li>
+														<li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>03</td>
@@ -282,7 +304,25 @@
 										<td>Rp.250.000 <span>/Night</span></td>
 										<td>5 <span>Night</span></td>
 										<td>A102</td>
-										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+										<td style="text-align: end;">
+											<div class="btn-group right">
+												<button class="hms-btn-sm success" style="margin-right: 10px;">Check in</button>
+												<div class="dropdown dropdown-edit">
+													<button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class="fas fa-ellipsis-h"></i>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-eye"></i><span>View Details</span></a>
+														</li>
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+														</li>
+														<li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>04</td>
@@ -293,7 +333,25 @@
 										<td>Rp.250.000 <span>/Night</span></td>
 										<td>5 <span>Night</span></td>
 										<td>A102</td>
-										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+										<td style="text-align: end;">
+											<div class="btn-group right">
+												<button class="hms-btn-sm success" style="margin-right: 10px;">Check in</button>
+												<div class="dropdown dropdown-edit">
+													<button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class="fas fa-ellipsis-h"></i>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-eye"></i><span>View Details</span></a>
+														</li>
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+														</li>
+														<li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>05</td>
@@ -304,7 +362,25 @@
 										<td>Rp.250.000 <span>/Night</span></td>
 										<td>5 <span>Night</span></td>
 										<td>A102</td>
-										<td style="text-align: end;"><button class="hms-btn-sm success" style="margin-right: 10px;">Check In</button> <button class="hms-btn-sm cancel outline"><i class="fas fa-ellipsis-h"></i></button></td>
+										<td style="text-align: end;">
+											<div class="btn-group right">
+												<button class="hms-btn-sm success" style="margin-right: 10px;">Check in</button>
+												<div class="dropdown dropdown-edit">
+													<button class="hms-btn-sm cancel outline dropdown-toggle  after-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+														<i class="fas fa-ellipsis-h"></i>
+													</button>
+													<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-eye"></i><span>View Details</span></a>
+														</li>
+														<li>
+															<a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i><span>Edit</span></a>
+														</li>
+														<li><a class="dropdown-item" href="#"><i class="fas fa-trash-alt"></i><span>Delete</span></a></li>
+													</ul>
+												</div>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 							</table>
