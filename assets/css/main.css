@@ -1809,3 +1809,171 @@ main.content .header .date-wrapper .header-date:focus{
     max-width: 1400px;
   }
 }
+@media (max-width: 575px) {
+    .hms-main-wrap .form-lable{
+        margin-bottom: 24px;
+    }
+    .hms-main-wrap .form-header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .hms-main-wrap .form-header .col-md-5{
+        padding-left: 0 !important;
+        width: 100%;
+    }
+    .hms-main-wrap .form-header .input-wrap{
+        padding-left: 32px;
+    }
+    .hms-main-wrap .form-group .col-md-7{
+        width: 100%;
+    }
+    .hms-main-wrap .form-group .col-md-5{
+        width: 100%;
+    }
+    
+    .hms-main-wrap .form-group .col-md-6{
+        width: 100%;
+    }
+    .hms-main-wrap .form-group .col-md-4{
+        width: 100%;
+    }
+    .hms-main-wrap .form-group .col-md-8{
+        width: 100%;
+    }
+    .hms-main-wrap .input-wrap .lable-wrap{
+        width: 100%;
+        max-width: 189px;
+        min-width: 189px;
+        margin-right: 0;
+    }
+    .hms-main-wrap .input-wrap .col-8{
+        width: 100%;
+        flex: auto;
+    }
+    .right-content{
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .hms-main-wrap .form-lable{
+        margin-bottom: 24px;
+    }
+    .hms-main-wrap .form-header {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .hms-main-wrap .form-header .col-md-5{
+        padding-left: 0 !important;
+        width: 100%;
+    }
+    .hms-main-wrap .form-header .input-wrap{
+        padding-left: 32px;
+    }
+    .hms-main-wrap .form-group .col-md-7{
+        width: 100%;
+    }
+    .hms-main-wrap .form-group .col-md-5{
+        width: 100%;
+    }
+    
+    .hms-main-wrap .form-group .col-md-6{
+        width: 100%;
+    }
+    .hms-main-wrap .form-group .col-md-4{
+        width: 100%;
+    }
+    .hms-main-wrap .form-group .col-md-8{
+        width: 100%;
+    }
+    .hms-main-wrap .input-wrap .lable-wrap{
+        width: 100%;
+        max-width: 189px;
+        min-width: 189px;
+        margin-right: 0;
+    }
+    .hms-main-wrap .input-wrap .col-8{
+        width: 100%;
+        flex: auto;
+    }
+    .right-content{
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hms-main-wrap .form-header{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .hms-main-wrap .form-header .col-md-5{
+        padding-left: 0 !important;
+    }
+    .hms-main-wrap .form-header .input-wrap{
+        padding-left: 32px;
+    }
+    .hms-main-wrap .form-header .input-wrap {
+        padding-left: 32px;
+    }
+    .hms-main-wrap .form-header .input-wrap{
+        flex-direction: column;
+        padding-top: 15px;
+    }
+    .hms-main-wrap .form-header .input-wrap .col-8{
+        width: 100%;
+    }
+    .hms-main-wrap .input-wrap .col-8{
+        width: 100%;
+    }
+    .hms-main-wrap .input-wrap{
+        flex-direction: column;
+    }
+    .input-wrap .lable-wrap{
+        margin-bottom: 8px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hms-main-wrap .form-header{
+        align-items: unset;
+    }
+    .form-header .input-wrap{
+        padding-top: 15px;
+    }
+    .input-wrap .lable-wrap{
+        white-space: normal;
+    }
+    .hms-main-wrap .form-group:nth-of-type(4) .col-md-4:nth-child(-n+6){
+        width: 50%;
+    }
+    .hms-main-wrap .form-group .col-md-4:nth-child(5) .input-wrap .lable-wrap{
+        width: 100%;
+        max-width: 189px;
+        min-width: 189px;
+        margin-right: 0;
+    }
+    .hms-main-wrap .form-group:nth-of-type(6) .col-md-6:nth-child(-n+6) {
+        width: 100%;
+    }
+    .hms-main-wrap .form-group:nth-of-type(6) .col-md-6 .input-wrap .lable-wrap {
+        width: 100%;
+        max-width: 189px;
+        min-width: 189px;
+        margin-right: 0;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1400px){
+    .input-wrap .lable-wrap{
+        white-space: normal;
+    }
+    .hms-main-wrap .form-group:nth-of-type(4) .col-md-4:nth-child(-n+6){
+        width: 50%;
+    }
+    .hms-main-wrap .form-group .col-md-4:nth-child(5) .input-wrap .lable-wrap{
+        width: 100%;
+        max-width: 189px;
+        min-width: 189px;
+        margin-right: 0;
+    }
+}
