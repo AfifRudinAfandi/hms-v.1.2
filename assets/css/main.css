@@ -682,7 +682,7 @@ main.content .header .date-wrapper .header-date:focus{
     border-top-right-radius: 4px !important;
 }
 .hms-table tr th, .hms-table tr td{
-    padding: 10px 20px;
+    padding: 10px;
 }
 .hms-table tbody tr td{
     font-style: normal;
@@ -849,7 +849,6 @@ main.content .header .date-wrapper .header-date:focus{
     border-radius: 4px;
     width: 100% !important;
 }
-
 .general-form label span{
     font-style: normal;
     font-weight: 600;
@@ -1447,7 +1446,9 @@ main.content .header .date-wrapper .header-date:focus{
     padding: 27px;
 }
 
-
+.user-dashboard-column{
+    width: calc(70% - 38px) !important;
+}
 .user-dasboard-main{
     display: flex;
     flex-direction: column;
@@ -1455,8 +1456,7 @@ main.content .header .date-wrapper .header-date:focus{
     width: 100%;
     min-height: 100vh;
     background-color: #F6F8FA;
-    padding-left: 80px;
-    padding-right: 80px;
+    overflow: hidden;
 }
 .user-dashboard-wrapper{
     width: 100%;
@@ -1464,11 +1464,11 @@ main.content .header .date-wrapper .header-date:focus{
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 76px 0px;
+    max-width: 1048px;
+    padding: 0px 12px;
 }
 .user-dashboard-wrapper .user-navigation{
-    width: 25%;
-    min-width: 254px;
-    max-width: 400px;
+    width: 30%;
 }
 .bg-white{
     background-color: #FFFFFF;
@@ -1532,6 +1532,7 @@ main.content .header .date-wrapper .header-date:focus{
 }
 .user-dashboard-wrapper .main-navigation .navigation-item:nth-last-of-type(1) .nav-link{
     border-bottom: none;
+    justify-content: center;
 }
 .user-dashboard-wrapper .main-navigation .navigation-item .nav-link{
     font-style: normal;
@@ -1780,7 +1781,9 @@ main.content .header .date-wrapper .header-date:focus{
 	border-radius: 24px;
 }
 
-
+.hms-table .hms-btn-sm ,.hms-table .hms-btn{
+    white-space: nowrap;
+}
 
 
 
@@ -1810,6 +1813,39 @@ main.content .header .date-wrapper .header-date:focus{
   }
 }
 @media (max-width: 575px) {
+    .hms-main-wrap .form-header{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .hms-main-wrap .form-header .col-md-5{
+        padding-left: 0 !important;
+    }
+    .hms-main-wrap .form-header .input-wrap{
+        padding-left: 32px;
+    }
+    .hms-main-wrap .form-header .input-wrap {
+        padding-left: 32px;
+    }
+    .hms-main-wrap .form-header .input-wrap{
+        flex-direction: column;
+        padding-top: 15px;
+    }
+    .hms-main-wrap .form-header .input-wrap .col-8{
+        width: 100%;
+    }
+    .hms-main-wrap .input-wrap .col-8{
+        width: 100%;
+    }
+    .hms-main-wrap .input-wrap{
+        flex-direction: column;
+    }
+    .input-wrap .lable-wrap{
+        margin-bottom: 8px;
+    }
+    
+    .hms-main-wrap.hms-filter .hms-btn.solid{
+        white-space: nowrap;
+    }
     .hms-main-wrap .form-lable{
         margin-bottom: 24px;
     }
@@ -1933,6 +1969,52 @@ main.content .header .date-wrapper .header-date:focus{
     .input-wrap .lable-wrap{
         margin-bottom: 8px;
     }
+    
+    .hms-main-wrap.hms-filter .hms-btn.solid{
+        white-space: nowrap;
+    }
+    .general-form label{
+        padding-right: 12px;
+    }
+    
+    .user-dashboard .general-form .row:nth-of-type(1) .col-2,
+    .user-dashboard.general-setting .general-form .row:nth-of-type(4) .col-2
+    {
+        width: 30%;
+    }
+    .user-dashboard .general-form .row:nth-of-type(1) .col-4,
+    .user-dashboard .general-form .row:nth-of-type(4) .col-4
+    {
+        width: 70%;
+    }
+
+    .user-dashboard .general-form .row:nth-of-type(2) .col-2,
+    .user-dashboard .general-form .row:nth-of-type(3) .col-2
+    {
+        width: 30%;
+    }
+    .user-dashboard .general-form .row:nth-of-type(2) .col-10,
+    .user-dashboard .general-form .row:nth-of-type(3) .col-10
+    {
+        width: 70%;
+    }
+    .user-dashboard-column{
+        margin-left: 28px !important;
+    }
+    .user-dashboard-wrapper{
+        width: calc(100% - 48px);
+        padding: 0;
+    }
+    .user-dashboard-wrapper .main-navigation{
+        padding: 20px 18px;
+    }
+    .user-dashboard-wrapper .main-navigation .navigation-item .nav-link{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     .hms-main-wrap .form-header{
@@ -1962,6 +2044,56 @@ main.content .header .date-wrapper .header-date:focus{
         min-width: 189px;
         margin-right: 0;
     }
+
+
+    .hms-main-wrap.hms-filter .input-wrap{
+        flex-direction: column;
+        padding-top: 15px;
+    }
+    .hms-main-wrap.hms-filter .input-wrap .col-8{
+        width: 100%;
+    }
+    .hms-main-wrap.hms-filter .input-wrap .col-8{
+        width: 100%;
+    }
+    .hms-main-wrap.hms-filter .input-wrap{
+        flex-direction: column;
+    }
+    .hms-main-wrap.hms-filter .input-wrap .lable-wrap{
+        margin-bottom: 8px;
+    }
+    .hms-main-wrap.hms-filter .hms-btn.solid{
+        white-space: nowrap;
+    }
+
+    .hms-main-wrap.hms-add-room .form-group:nth-of-type(4) .input-wrap {
+        flex-direction: column;
+    }
+    .hms-main-wrap.hms-add-room .form-group:nth-of-type(4) .input-wrap .lable-wrap {
+        margin-bottom: 8px;
+    }
+
+
+    .user-dashboard .general-form .row:nth-of-type(1) .col-2,
+    .user-dashboard .general-form .row:nth-of-type(4) .col-2
+    {
+        width: 25%;
+    }
+    .user-dashboard .general-form .row:nth-of-type(2) .col-2,
+    .user-dashboard .general-form .row:nth-of-type(3) .col-2
+    {
+        width: 25%;
+    }
+    .user-dashboard .general-form .row:nth-of-type(2) .col-10,
+    .user-dashboard .general-form .row:nth-of-type(3) .col-10
+    {
+        width: 75%;
+    }
+    .user-dashboard .general-form .row:nth-of-type(1) .col-4,
+    .user-dashboard .general-form .row:nth-of-type(4) .col-4
+    {
+        width: 25%;
+    }
 }
 @media (min-width: 1200px) and (max-width: 1400px){
     .input-wrap .lable-wrap{
@@ -1975,5 +2107,8 @@ main.content .header .date-wrapper .header-date:focus{
         max-width: 189px;
         min-width: 189px;
         margin-right: 0;
+    }
+    .hms-main-wrap.hms-filter .input-wrap {
+        flex-direction: column;
     }
 }
