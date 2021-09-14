@@ -1821,12 +1821,7 @@ main.content .header .date-wrapper .header-date:focus{
         padding-left: 0 !important;
     }
     .hms-main-wrap .form-header .input-wrap{
-        padding-left: 32px;
-    }
-    .hms-main-wrap .form-header .input-wrap {
-        padding-left: 32px;
-    }
-    .hms-main-wrap .form-header .input-wrap{
+        padding-left: 26px;
         flex-direction: column;
         padding-top: 15px;
     }
@@ -1858,9 +1853,6 @@ main.content .header .date-wrapper .header-date:focus{
         padding-left: 0 !important;
         width: 100%;
     }
-    .hms-main-wrap .form-header .input-wrap{
-        padding-left: 32px;
-    }
     .hms-main-wrap .form-group .col-md-7{
         width: 100%;
     }
@@ -1890,6 +1882,124 @@ main.content .header .date-wrapper .header-date:focus{
     .right-content{
         align-items: flex-start;
         margin-bottom: 24px;
+    }
+    main.content {
+        padding: 0px 6px 48px 6px;
+    }
+    main.content .header{
+        flex-direction: column;
+        margin-bottom: 34px;
+    }
+    .hms-btn{
+        white-space: nowrap;
+    }
+    .wrap-modal-reservation .center-content{
+        flex-wrap: wrap;
+    }
+    .wrap-modal-reservation .center-content .hms-btn{
+        margin-bottom: 12px;
+    }
+    .wrap-modal-reservation p{
+        margin-bottom: 32px;
+    }
+    .hms-main-wrap .form-group{
+        padding: 32px 26px 32px 26px;
+    }
+    .modal-rev-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navigation-room-type .nav-item {
+        width: 50%;
+    }
+    .navigation-room-type .nav-item:nth-of-type(-n+2) {
+        border-bottom: 1px solid #C6C7D3;
+    }
+    .wrap-check-room{
+        padding: 18px;
+    }
+    .check-row .check-outer {
+        width: calc(33.3% - 8px);
+    }
+    .check-row .check-outer:nth-child(3n){
+        margin-right: 0;
+    }
+    .check-row .check-outer:nth-of-type(5n){
+        margin-right: 10px;
+    }
+    .modal-justify{
+        flex-direction: column;
+    }
+    .modal-justify .pagination {
+        margin-bottom: 28px !important;
+    }
+    .header .btn-wrapper.horizontal{
+        margin-top: 28px;
+        flex-wrap: wrap;
+    }
+
+
+    .user-dashboard-column{
+        margin-left: 0 !important;
+        width: 100% !important;
+        margin-top: 32px;
+    }
+    .user-dashboard .dashboard-body .col-md-2 .profile-picture{
+        max-width: 180px;
+        margin-bottom: 18px;
+    }
+    .user-dashboard-wrapper{
+        flex-direction: column;
+        margin: 28px 0px;
+    }
+    .user-dashboard-wrapper .user-navigation{
+        width: 100%;
+    }
+    .user-dashboard-wrapper .main-navigation{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .user-dashboard-wrapper .main-navigation .navigation-item{
+        width: auto;
+        margin-bottom: 0;
+    }
+    .user-dashboard-wrapper .main-navigation .navigation-item .nav-link{
+        border-bottom: none;
+        background-color: transparent !important;
+    }
+    .user-dashboard-wrapper .main-navigation .navigation-item .nav-link span{
+        display: none;
+    }
+    .user-dashboard-wrapper .main-navigation .navigation-item .nav-link img{
+        margin-right: 0;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    .user-dashboard-wrapper .main-navigation .navigation-item:nth-last-of-type(2){
+        margin-bottom: 0;
+    }
+    .user-dashboard .aplication-item{
+        margin-bottom: 18px;
+    }
+    .user-dashboard .header{
+        padding: 26px;
+    }
+    .user-dashboard .header .row-spacebetwen{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-dashboard .dashboard-body {
+        padding: 0px 26px 26px 26px;
+    }
+    .user-dashboard .dashboard-body .row-spacebetwen{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .user-dashboard .dashboard-body .row-spacebetwen .btn-wrapper.horizontal:nth-child(1){
+        margin-bottom: 18px;
     }
 }
 @media (min-width: 576px) and (max-width: 767px) {
