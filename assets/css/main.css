@@ -2001,6 +2001,15 @@ main.content .header .date-wrapper .header-date:focus{
     .user-dashboard .dashboard-body .row-spacebetwen .btn-wrapper.horizontal:nth-child(1){
         margin-bottom: 18px;
     }
+    .user-dashboard .dashboard-body .general-form .col-2{
+        width: 40%;
+    }
+    .user-dashboard .dashboard-body .general-form .col-4{
+        width: 60%;
+    }
+    .user-dashboard .dashboard-body .general-form .col-10{
+        width: 60%;
+    }
 }
 @media (min-width: 576px) and (max-width: 767px) {
     .hms-main-wrap .form-lable{
